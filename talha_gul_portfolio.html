@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talha Gul — BS Nursing Student</title>
+<meta name="description" content="Talha Gul — BS Nursing Student Portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F19;--surface:#111827;--cyan:#00C2FF;--indigo:#6366F1;--bright:#22D3EE;
+  --text:#F8FAFC;--muted:#94A3B8;--border:#1E293B;
+  --glow:rgba(0,194,255,.20);--gradient:linear-gradient(135deg,#00C2FF,#6366F1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:18px 0;background:rgba(11,15,25,.78);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-color:var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Manrope;font-weight:800;font-size:1.15rem;letter-spacing:-.04em}
+.logo span{color:var(--cyan)}
+.links{display:flex;gap:28px;color:var(--muted);font-size:.9rem}
+.links a{transition:.25s}.links a:hover,.links a.active{color:var(--cyan)}
+.menu{display:none;background:none;border:0;color:var(--text);font-size:1.5rem}
+.hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 80px;position:relative}
+.hero:before{content:"";position:absolute;width:600px;height:600px;right:-250px;top:80px;background:radial-gradient(circle,rgba(0,194,255,.13),transparent 65%);filter:blur(15px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.badge{display:inline-flex;padding:7px 13px;border:1px solid rgba(0,194,255,.35);border-radius:999px;color:var(--bright);background:rgba(0,194,255,.06);font-size:.78rem;font-weight:700;margin-bottom:22px}
+h1{font-family:Manrope;font-size:clamp(3.2rem,7vw,6.3rem);line-height:.98;letter-spacing:-.07em;margin-bottom:20px}
+.gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:600;color:#dbeafe;margin-bottom:16px}
+.hero p,.section-intro{color:var(--muted);max-width:620px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 19px;border-radius:12px;border:1px solid var(--border);font-weight:700;font-size:.9rem;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--gradient);border:none;color:white;box-shadow:0 10px 35px rgba(0,194,255,.15)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px var(--glow)}
+.btn.secondary{background:rgba(17,24,39,.7)}
+.visual{min-height:440px;border:1px solid var(--border);border-radius:32px;background:linear-gradient(145deg,rgba(17,24,39,.95),rgba(11,15,25,.85));position:relative;display:grid;place-items:center;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.visual:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--glow);filter:blur(65px)}
+.medical-ring{width:250px;height:250px;border:1px solid rgba(0,194,255,.35);border-radius:50%;display:grid;place-items:center;position:relative}
+.medical-ring:before,.medical-ring:after{content:"";position:absolute;border:1px solid rgba(99,102,241,.35);border-radius:50%}
+.medical-ring:before{inset:25px}.medical-ring:after{inset:55px}
+.cross{font-size:6rem;font-weight:300;color:var(--cyan);text-shadow:0 0 35px rgba(0,194,255,.45)}
+.float-card{position:absolute;background:rgba(17,24,39,.9);border:1px solid var(--border);border-radius:16px;padding:13px 16px;backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.fc1{top:48px;right:35px}.fc2{bottom:55px;left:30px}.fc3{bottom:32px;right:35px}
+.float-card small{color:var(--muted);display:block;font-size:.68rem}.float-card strong{font-size:.86rem}
+section{padding:105px 0}
+.section-head{margin-bottom:42px}
+.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;margin-bottom:8px}
+h3{font-family:Manrope;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em}
+.grid{display:grid;gap:18px}
+.about-grid{grid-template-columns:1.3fr .7fr}
+.card{background:rgba(17,24,39,.75);border:1px solid var(--border);border-radius:22px;padding:27px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,194,255,.4);box-shadow:0 20px 45px rgba(0,194,255,.07)}
+.info-list{display:grid;gap:14px}.info-row{display:flex;justify-content:space-between;gap:15px;padding-bottom:12px;border-bottom:1px solid var(--border);font-size:.88rem}.info-row:last-child{border:0}.info-row span:first-child{color:var(--muted)}
+.timeline{position:relative;padding-left:30px}.timeline:before{content:"";position:absolute;left:5px;top:5px;bottom:5px;width:1px;background:linear-gradient(var(--cyan),var(--indigo),transparent)}
+.timeline-item{position:relative;padding:0 0 35px}.timeline-item:before{content:"";position:absolute;left:-30px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}
+.timeline-item h4{font-family:Manrope;font-size:1.2rem}.timeline-item p{color:var(--muted);font-size:.9rem}
+.skill-grid{grid-template-columns:repeat(5,1fr)}
+.skill{padding:22px}.skill-icon{color:var(--cyan);font-size:1.4rem;margin-bottom:12px}.skill h4{font-size:.9rem}.skill p{font-size:.76rem;color:var(--muted);margin-top:5px}
+.project-grid{grid-template-columns:repeat(3,1fr)}
+.project-number{color:var(--cyan);font-size:.75rem;font-weight:800}.project h4{font-family:Manrope;font-size:1.15rem;margin:8px 0}.project p{color:var(--muted);font-size:.85rem;margin-bottom:18px}
+.values{grid-template-columns:repeat(4,1fr)}
+.value h4{margin:8px 0;font-family:Manrope}.value p{color:var(--muted);font-size:.82rem}
+.contact{display:grid;grid-template-columns:1fr .9fr;gap:25px;align-items:stretch}
+.contact-card{display:flex;flex-direction:column;justify-content:space-between}
+.phone{font-family:Manrope;font-size:1.5rem;font-weight:800;margin:18px 0;color:var(--text)}
+.phone:hover{color:var(--cyan)}
+footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.hero-grid,.about-grid,.contact{grid-template-columns:1fr}.skill-grid{grid-template-columns:repeat(2,1fr)}.project-grid,.values{grid-template-columns:1fr 1fr}.visual{min-height:360px}}
+@media(max-width:650px){.links{display:none;position:absolute;top:70px;left:4%;right:4%;padding:18px;flex-direction:column;gap:15px;background:rgba(17,24,39,.97);border:1px solid var(--border);border-radius:16px}.links.open{display:flex}.menu{display:block}.hero{padding-top:110px}.hero-grid{gap:35px}h1{font-size:3.4rem}.skill-grid,.project-grid,.values{grid-template-columns:1fr}.visual{min-height:320px}.medical-ring{width:190px;height:190px}.cross{font-size:4.5rem}.fc1{top:25px;right:18px}.fc2{bottom:35px;left:15px}.fc3{bottom:15px;right:15px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<div class="container nav-inner">
+<a class="logo" href="#home">Talha<span>Gul.</span></a>
+<div class="links" id="links">
+<a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+</div>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
+</div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="reveal">
+<div class="badge">BS Nursing Student • 3rd Semester</div>
+<h1>Talha <span class="gradient-text">Gul</span></h1>
+<h2>BS Nursing Student | Passionate About Patient Care & Healthcare</h2>
+<p>A dedicated BS Nursing student focused on developing strong clinical knowledge, communication skills, and compassionate patient care.</p>
+<div class="actions">
+<a class="btn primary" href="#education">View My Journey →</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+</div>
+</div>
+<div class="visual reveal">
+<div class="medical-ring"><div class="cross">+</div></div>
+<div class="float-card fc1"><small>PROGRAM</small><strong>BS Nursing</strong></div>
+<div class="float-card fc2"><small>CURRENT LEVEL</small><strong>3rd Semester</strong></div>
+<div class="float-card fc3"><small>FOCUS</small><strong>Patient Care</strong></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">01 — About</div><h3>Learning with purpose.</h3></div>
+<div class="grid about-grid">
+<div class="card reveal"><p class="section-intro">I am Talha Gul, a BS Nursing student currently in my 3rd semester. My journey is focused on building a strong foundation in nursing, understanding patient-centered care, improving communication and teamwork, and continuously developing the knowledge and professional values needed for healthcare.</p></div>
+<div class="card reveal info-list">
+<div class="info-row"><span>Name</span><strong>Talha Gul</strong></div>
+<div class="info-row"><span>Program</span><strong>BS Nursing</strong></div>
+<div class="info-row"><span>Semester</span><strong>3rd Semester</strong></div>
+<div class="info-row"><span>Status</span><strong>Student</strong></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">02 — Education</div><h3>Academic journey.</h3></div>
+<div class="card reveal timeline">
+<div class="timeline-item"><h4>BS Nursing</h4><p>Currently Studying · 3rd Semester</p><p>Developing academic knowledge, clinical understanding, communication skills and patient-care fundamentals.</p></div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">03 — Skills</div><h3>Skills & strengths.</h3></div>
+<div class="grid skill-grid">
+<div class="card skill reveal"><div class="skill-icon">✦</div><h4>Patient Care Fundamentals</h4><p>Building core patient-care knowledge.</p></div>
+<div class="card skill reveal"><div class="skill-icon">◌</div><h4>Communication</h4><p>Clear and respectful communication.</p></div>
+<div class="card skill reveal"><div class="skill-icon">+</div><h4>Basic Clinical Knowledge</h4><p>Developing foundational understanding.</p></div>
+<div class="card skill reveal"><div class="skill-icon">◎</div><h4>Teamwork</h4><p>Collaborative learning and care.</p></div>
+<div class="card skill reveal"><div class="skill-icon">◷</div><h4>Time Management</h4><p>Organized academic workflow.</p></div>
+<div class="card skill reveal"><div class="skill-icon">⌁</div><h4>Medical Terminology</h4><p>Learning healthcare language.</p></div>
+<div class="card skill reveal"><div class="skill-icon">◇</div><h4>Critical Thinking</h4><p>Developing thoughtful decision-making.</p></div>
+<div class="card skill reveal"><div class="skill-icon">▤</div><h4>Documentation</h4><p>Understanding accurate records.</p></div>
+<div class="card skill reveal"><div class="skill-icon">◈</div><h4>Professional Ethics</h4><p>Respect, responsibility and integrity.</p></div>
+<div class="card skill reveal"><div class="skill-icon">↗</div><h4>Continuous Learning</h4><p>Always improving knowledge and skills.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">04 — Projects</div><h3>Academic projects.</h3></div>
+<div class="grid project-grid">
+<div class="card project reveal"><div class="project-number">01</div><h4>Nursing Care Plan</h4><p>An academic nursing care plan demonstrating assessment, planning, implementation and evaluation of patient care.</p><a class="btn secondary" href="#">View Project</a></div>
+<div class="card project reveal"><div class="project-number">02</div><h4>Health Awareness Project</h4><p>A student project focused on creating awareness about healthy lifestyle practices and basic healthcare.</p><a class="btn secondary" href="#">View Project</a></div>
+<div class="card project reveal"><div class="project-number">03</div><h4>Patient Education Guide</h4><p>An academic project designed to explain basic patient-care and health-awareness concepts simply.</p><a class="btn secondary" href="#">View Project</a></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">05 — Values</div><h3>Why nursing?</h3></div>
+<div class="grid values">
+<div class="card value reveal"><div class="skill-icon">♡</div><h4>Compassion</h4><p>Putting empathy and respect at the center of patient care.</p></div>
+<div class="card value reveal"><div class="skill-icon">✦</div><h4>Learning</h4><p>Continuously developing healthcare knowledge and practical skills.</p></div>
+<div class="card value reveal"><div class="skill-icon">◎</div><h4>Teamwork</h4><p>Understanding the importance of collaboration in healthcare.</p></div>
+<div class="card value reveal"><div class="skill-icon">◆</div><h4>Responsibility</h4><p>Building professionalism and patient responsibility.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-head reveal"><div class="eyebrow">06 — Contact</div><h3>Let's connect.</h3></div>
+<div class="contact">
+<div class="card reveal"><p class="section-intro">For academic opportunities, collaboration, or professional inquiries, feel free to get in touch.</p><div class="actions"><a class="btn primary" href="tel:03164979144">Call Me</a><a class="btn secondary" href="sms:03164979144">Send Message</a></div></div>
+<div class="card contact-card reveal"><div><div class="eyebrow">Phone</div><a class="phone" href="tel:03164979144">03164979144</a></div><p class="section-intro">Email, LinkedIn and location can be added later.</p></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-inner"><div><strong>Talha Gul</strong> · BS Nursing Student</div><div>© 2026 Talha Gul. All rights reserved.</div></div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'),menu=document.getElementById('menu'),links=document.getElementById('links');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
